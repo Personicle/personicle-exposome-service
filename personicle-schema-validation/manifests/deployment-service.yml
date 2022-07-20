@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: personicle-schema-validation
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: personicle-schema-validation
+  template:
+    metadata:
+      labels:
+        app: personicle-schema-validation
+    spec:
+      containers:
+      - name: personicle-schema-validation
+        image: personicleservices.azurecr.io/personicle-schema-validation
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5002
+        env:
+        - name: INGESTION_PROD
+          valueFrom:
+            secretKeyRef:
+              name: secrets
+              key: INGESTION_PROD
+        - name: DATA_DICTIONARY_PORT
+          valueFrom:
+            secretKeyRef:
+              name: secrets
+              key: DATA_DICTIONARY_PORT
+        - name: DATA_DICTIONARY_HOST
+          valueFrom:
+            secretKeyRef:
+              name: secrets
+              key: DATA_DICTIONARY_HOST
+        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: personicle-schema-validation
+spec:
+  ports:
+  - port: 5002
+    name: personicle-schema-validation
+    protocol: TCP
+    targetPort: 5002
+  selector:
+    app: personicle-schema-validation

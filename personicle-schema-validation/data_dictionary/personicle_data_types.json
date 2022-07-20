@@ -1,0 +1,314 @@
+{
+    "com.personicle": {
+        "individual": {
+            "events": {
+                "com.personicle.individual.events.exercise": {
+                    "parameters":{
+                        "duration": {
+                            "ValueType": "Integer",
+                            "Unit": "seconds"
+                        },
+                        "source_device": {
+                            "ValueType": "String",
+                            "Unit": "NULL"
+                        }
+                    }
+
+                },
+                "com.personicle.individual.events.exercise.running": {
+                    "parameters":{}
+                }
+            },
+            "datastreams": {
+                "com.personicle.individual.datastreams.heartrate": {
+                    "ValueType": "Integer",
+                    "Unit": "bpm",
+                    "TableName": "heart_rate",
+                    "base_schema": "integer_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.heart_intensity_minutes": {
+                    "ValueType": "Numeric",
+                    "Unit": "minutes",
+                    "TableName": "heart_intensity_minutes",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.interval.heart_intensity_minutes": {
+                    "ValueType": "Numeric",
+                    "Unit": "minutes",
+                    "TableName": "interval_heart_intensity_minutes",
+                    "base_schema": "numeric_interval_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.active_minutes": {
+                    "ValueType": "Numeric",
+                    "Unit": "minutes",
+                    "TableName": "active_minutes",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.interval.active_minutes": {
+                    "ValueType": "Numeric",
+                    "Unit": "minutes",
+                    "TableName": "interval_active_minutes",
+                    "base_schema": "numeric_interval_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.step.cumulative": {
+                    "ValueType": "Integer",
+                    "Unit": "count",
+                    "TableName": "steps_cumulative",
+                    "base_schema": "integer_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.resting_calories": {
+                    "ValueType": "Numeric",
+                    "Unit": "kilo_calories",
+                    "TableName": "calories_resting",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.active_calories": {
+                    "ValueType": "Numeric",
+                    "Unit": "kilo_calories",
+                    "TableName": "calories_active",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.total_calories": {
+                    "ValueType": "Numeric",
+                    "Unit": "kilo_calories",
+                    "TableName": "calories_total",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.interval.total_calories": {
+                    "ValueType": "Numeric",
+                    "Unit": "kilo_calories",
+                    "TableName": "interval_calories_total",
+                    "base_schema": "numeric_interval_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.distance": {
+                    "ValueType": "Numeric",
+                    "Unit": "meters",
+                    "TableName": "distance",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.interval.distance": {
+                    "ValueType": "Numeric",
+                    "Unit": "meters",
+                    "TableName": "interval_distance",
+                    "base_schema": "numeric_interval_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.weight": {
+                    "ValueType": "Numeric",
+                    "Unit": "kilogram",
+                    "TableName": "weight",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.cycling.cadence": {
+                    "ValueType": "Numeric",
+                    "Unit": "rpm",
+                    "TableName": "cycling_cadence",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.cycling.cumulative_cadence": {
+                    "ValueType": "Numeric",
+                    "Unit": "rpm",
+                    "TableName": "cumulative_cycling_cadence",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.interval.cycling.cumulative_cadence": {
+                    "ValueType": "Numeric",
+                    "Unit": "rpm",
+                    "TableName": "interval_cumulative_cycling_cadence",
+                    "base_schema": "numeric_interval_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.cycling.power": {
+                    "ValueType": "Numeric",
+                    "Unit": "watts",
+                    "TableName": "cycling_power",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.step.cadence": {
+                    "ValueType": "Numeric",
+                    "Unit": "stepsperminute",
+                    "TableName": "step_cadence",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.step.count": {
+                    "ValueType": "Integer",
+                    "Unit": "stepsperminute",
+                    "TableName": "step_count",
+                    "base_schema": "integer_datastream_schema.avsc"
+                },
+                
+                "com.personicle.individual.datastreams.interval.step.count": {
+                    "ValueType": "Integer",
+                    "Unit": "stepsperminute",
+                    "TableName": "interval_step_count",
+                    "base_schema": "integer_interval_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.body_fat": {
+                    "ValueType": "Numeric",
+                    "Unit": "percentage",
+                    "TableName": "body_fat",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.height": {
+                    "ValueType": "Numeric",
+                    "Unit": "cm",
+                    "TableName": "height",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.location": {
+                    "ValueType": "Object",
+                    "Unit": "NA",
+                    "TableName": "location",
+                    "base_schema": "location_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.speed": {
+                    "ValueType": "Numeric",
+                    "Unit": "kmph",
+                    "TableName": "speed",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.blood_glucose": {
+                    "ValueType": "Numeric",
+                    "Unit": "",
+                    "TableName": "blood_glucose",
+                    "base_schema": "json_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.blood_pressure.systolic": {
+                    "ValueType": "Numeric",
+                    "Unit": "mm",
+                    "TableName": "blood_pressure_systolic",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.blood_pressure.diastolic": {
+                    "ValueType": "Numeric",
+                    "Unit": "mm",
+                    "TableName": "blood_pressure_diastolic",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.body_temperature": {
+                    "ValueType": "Numeric",
+                    "Unit": "Celsius",
+                    "TableName": "body_temperature",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.subjective.physician_questionnaire": {
+                    "ValueType": "Json",
+                    "Unit": "",
+                    "TableName": "physician_questionnaire",
+                    "base_schema": "json_object_datastream_schema.avsc"
+                },
+
+                "com.personicle.individual.datastreams.exposome.aqi": {
+
+                    "ValueType": "Numeric",
+                    "Unit": "",
+                    "TableName": "exposome_aqi",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.exposome.co": {
+
+                    "ValueType": "Numeric",
+                    "Unit": "ug/cc",
+                    "TableName": "exposome_co",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+
+                "com.personicle.individual.datastreams.exposome.no": {
+
+                    "ValueType": "Numeric",
+                    "Unit": "ug/cc",
+                    "TableName": "exposome_no",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+
+                "com.personicle.individual.datastreams.exposome.no2": {
+
+                    "ValueType": "Numeric",
+                    "Unit": "ug/cc",
+                    "TableName": "exposome_no2",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+
+                 "com.personicle.individual.datastreams.exposome.03": {
+
+                    "ValueType": "Numeric",
+                    "Unit": "ug/cc",
+                    "TableName": "exposome_03",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+
+                "com.personicle.individual.datastreams.exposome.so2": {
+
+                    "ValueType": "Numeric",
+                    "Unit": "ug/cc",
+                    "TableName": "exposome_so2",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+
+                 "com.personicle.individual.datastreams.exposome.pm2_5": {
+
+                    "ValueType": "Numeric",
+                    "Unit": "ug/cc",
+                    "TableName": "exposome_pm2_5",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+
+                  "com.personicle.individual.datastreams.exposome.pm10": {
+
+                    "ValueType": "Numeric",
+                    "Unit": "ug/cc",
+                    "TableName": "exposome_pm10",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+
+                "com.personicle.individual.datastreams.exposome.nh3": {
+
+                    "ValueType": "Numeric",
+                    "Unit": "ug/cc",
+                    "TableName": "exposome_nh3",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+
+                   "com.personicle.individual.datastreams.exposome.temp": {
+
+                    "ValueType": "Numeric",
+                    "Unit": "C",
+                    "TableName": "exposome_temp",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+
+                 "com.personicle.individual.datastreams.exposome.feels_like": {
+
+                    "ValueType": "Numeric",
+                    "Unit": "C",
+                    "TableName": "exposome_feels_like",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+
+                "com.personicle.individual.datastreams.exposome.pressure": {
+
+                    "ValueType": "Numeric",
+                    "Unit": "hPa",
+                    "TableName": "exposome_pressure",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+
+                "com.personicle.individual.datastreams.exposome.humidity": {
+
+                    "ValueType": "Numeric",
+                    "Unit": "%",
+                    "TableName": "exposome_humidity",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+
+                 "com.personicle.individual.datastreams.exposome.uvi": {
+
+                    "ValueType": "Numeric",
+                    "Unit": "mwpscc",
+                    "TableName": "exposome_uvi",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                }
+
+
+            }
+        }
+    }
+}

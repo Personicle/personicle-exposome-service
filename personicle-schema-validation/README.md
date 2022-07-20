@@ -1,1 +1,0 @@
-# personicle-schema-validation

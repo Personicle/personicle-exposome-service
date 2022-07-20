@@ -10,18 +10,18 @@ import traceback
 from configparser import ConfigParser
 import copy
 
-from config import DB_CONFIG
+from utils.config import DB_CONFIG
 
 logger = logging.getLogger(__name__)
 
-# DATABASE_URL = 'postgresql://{}:{}@{}/{}?sslmode={}'.format("tirth", "password", "localhost", "personicletest", 'prefer')
-DATABASE_URL = 'postgresql://{}:{}@{}/{}?sslmode={}'.format(DB_CONFIG['USERNAME'], DB_CONFIG['PASSWORD'],DB_CONFIG['HOST'],DB_CONFIG['NAME'], 'prefer')
+DATABASE_URL = 'postgresql://{}:{}@{}/{}?sslmode={}'.format(
+    DB_CONFIG['USERNAME'], DB_CONFIG['PASSWORD'], DB_CONFIG['HOST'], DB_CONFIG['NAME'], 'prefer')
 database = databases.Database(DATABASE_URL)
 
 metadata = sqlalchemy.MetaData()
 # engine = sqlalchemy.create_engine("postgresql://{username}:{password}@{dbhost}/{dbname}".format(username=database['USERNAME'], password=database['PASSWORD'],
 #                                                                                                         dbhost=database['HOST'], dbname=database['NAME']))
-  
+
 engine = sqlalchemy.create_engine(
     DATABASE_URL, pool_size=3, max_overflow=0
 )
@@ -29,6 +29,7 @@ engine = sqlalchemy.create_engine(
 Base = declarative_base(engine)
 
 TABLE_MODELS = {}
+
 
 def generate_table_class(table_name: str, base_schema: dict):
     if table_name in TABLE_MODELS:
@@ -55,7 +56,7 @@ def generate_table_class(table_name: str, base_schema: dict):
 #         generated_model = None
 #     return generated_model
 
-# pydantic model 
+# pydantic model
 # class HeartRate(BaseModel):
 #     individual_id: str
 #     timestamp: Optional[datetime]

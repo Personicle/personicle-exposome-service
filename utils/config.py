@@ -10,19 +10,24 @@ if os.environ.get('DEV_ENVIRONMENT', 'LOCAL') in ["PRODUCTION", "AZURE_STAGING"]
         "NAME": os.environ["DB_NAME"]
     }
 
-    OKTA_CONFIG={
-        "CLIENT_ID": os.environ["OKTA_CLIENT_ID"],
-        "CLIENT_SECRET": os.environ["OKTA_CLIENT_SECRET"],
-        "ISSUER": os.environ["OKTA_ISSUER"],
-        "AUDIENCE": os.environ["OKTA_AUDIENCE"]
-    }
-    PERSONICLE_AUTH_API = {
-        "ENDPOINT": os.environ["PERSONICLE_AUTH_API_ENDPOINT"]
+    EVENTHUB_CONFIG = {
+        "DATASTREAM_EVENTHUB_CONNECTION_STRING": os.environ["DATASTREAM_EVENTHUB_CONNECTION_STRING"],
+        "DATASTREAM_EVENTHUB_NAME": os.environ["DATASTREAM_EVENTHUB_NAME"]
     }
 
-    PERSONICLE_SCHEMA_API = {
-        "ENDPOINT": os.environ["PERSONICLE__API_ENDPOINT"]
-    }
+    # OKTA_CONFIG={
+    #     "CLIENT_ID": os.environ["OKTA_CLIENT_ID"],
+    #     "CLIENT_SECRET": os.environ["OKTA_CLIENT_SECRET"],
+    #     "ISSUER": os.environ["OKTA_ISSUER"],
+    #     "AUDIENCE": os.environ["OKTA_AUDIENCE"]
+    # }
+    # PERSONICLE_AUTH_API = {
+    #     "ENDPOINT": os.environ["PERSONICLE_AUTH_API_ENDPOINT"]
+    # }
+
+    # PERSONICLE_SCHEMA_API = {
+    #     "ENDPOINT": os.environ["PERSONICLE__API_ENDPOINT"]
+    # }
 
 else:
     config_object = ConfigParser()
@@ -31,8 +36,8 @@ else:
     OKTA_CONFIG = config_object["OKTA"]
     PERSONICLE_AUTH_API = config_object["PERSONICLE_AUTH_SERVICE"]
     PERSONICLE_SCHEMA_API = config_object["PERSONICLE_DATA_DICTIONARY"]
-    EVENTHUB_CONFIG=config_object["EVENTHUB"]
-    
+    EVENTHUB_CONFIG = config_object["EVENTHUB"]
+
     # DB_CONFIG = {
     #     "USERNAME" : os.getenv('USERNAME'),
     #     "PASSWORD": os.getenv('PASSWORD'),

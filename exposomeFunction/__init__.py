@@ -30,7 +30,7 @@ def main(mytimer: func.TimerRequest) -> None:
 
     logging.info('Python timer trigger function ran at %s', utc_timestamp)
 
-    api_key_weather = "8b4545eed9dc9ba39fcf91ff79d26930"
+    api_key_weather = "093c33903fd3e82d277fcf59a4f550ac"
 
     try:
         query_events = 'select * from  users '
@@ -77,7 +77,7 @@ def main(mytimer: func.TimerRequest) -> None:
 
             df_weather['unit'] = df_weather['variable'].map(dct_weather)
 
-            api_key_pol = "8b4545eed9dc9ba39fcf91ff79d26930"
+            api_key_pol = "093c33903fd3e82d277fcf59a4f550ac"
 
             pollution_url = "http://api.openweathermap.org/data/2.5/air_pollution?lat=%s&lon=%s&appid=%s" % (
                 lat, lon, api_key_pol)
